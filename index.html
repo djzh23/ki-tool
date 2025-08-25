@@ -1,221 +1,221 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
-        <meta name='impact-site-verification' value='108ec648-0ca4-4cda-acbf-e3a16e958dbf'>
-        <title>Home - Ai Blog</title>
-        <style>
-            *{
-                box-sizing: border-box;
-            }
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+  <meta name="impact-site-verification" content="108ec648-0ca4-4cda-acbf-e3a16e958dbf">
+  <title>Home - Ai Blog</title>
+  <style>
+    * { box-sizing: border-box; }
 
-            :root{
-                --accent-theme: rgb(89, 89, 240);
-                --accent: #ff7a00;
-                --text: #111;
-                --muted: #666;
-                --border: #e9e9e9;
-                --radius: 12px;
-                --shadow: 0 1px 2px rgba(0,0,0,.12);
-                --maxw: 1000px;
-                --sp: 16px;
-            }
+    :root {
+      --accent-theme: rgb(89, 89, 240);
+      --accent: #ff7a00;
+      --text: #111;
+      --muted: #666;
+      --border: #e9e9e9;
+      --radius: 12px;
+      --shadow: 0 1px 2px rgba(0,0,0,.12);
+      --maxw: 1000px;
+      --sp: 16px;
+    }
 
+    html, body { height: 100%; }
 
-            html, body{
-                height: 100%;
-            }
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      color: var(--muted);
+      background: linear-gradient(120deg, #fff 0%, #fdf0e5 50%, #ffe6cc 100%);
+    }
 
-            body{
-                margin: 0 0;
-                font-family: system-ui, sans-serif;
-                /* color: var(--text); */
-                color: var(--muted);
-  /* background: linear-gradient(135deg, #fdfbfb, #ebedee); */
-  background: linear-gradient(120deg, #fff 0%, #fdf0e5 50%, #ffe6cc 100%);
-            }
+    .page {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 24px;
+      line-height: 1.5;
+      min-height: 100dvh;
+    }
 
-            .page{
-                display: grid;
-                grid-template-rows: auto 1fr auto;
-                gap: 24px;
-                align-items: center;
-                line-height: 1.5;
-                height: 100svh;
-            }
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      padding: 12px 16px;
+      flex-wrap: wrap;
+    }
 
-            .site-header{
-                display : flex;
-                justify-content: space-between;
-                border-bottom: 1px solid var(--border);
-                padding: 12px 16px;
-                flex-wrap:wrap; 
-            }
+    .brand {
+      font-weight: 700;
+      color: inherit;
+      letter-spacing: .3px;
+      text-decoration: none;
+    }
 
-            .brand{
-                font-weight: 700;
-                color: inherit;
-                letter-spacing: .3px;
-            }
+    .site-nav {
+      display: flex;
+      gap: 12px;
+    }
 
-            .site-nav{
-                display : flex;
-                gap: 12px;
-            }
+    .site-nav a {
+      text-decoration: none;
+      color: #111;
+      border-bottom: 2px solid transparent;
+    }
 
-            .site-nav a{
-                text-decoration: none;
-                color: #111;
-                border-bottom: 2px solid var(--accent-theme);
-                
-            }
+    .site-nav a:hover,
+    .site-nav a:focus {
+      border-bottom-color: var(--accent);
+      outline: none;
+    }
 
-            .site-nav a:hover, 
-            .site-nav a:focus{ 
-                border-bottom-color: var(--accent);
-                 outline: none; 
-            }
+    .site-main {
+      display: grid;
+      gap: 30px;
+      padding: 12px 16px;
+    }
 
+    .hero-section {
+      display: grid;
+      max-width: 720px;
+      margin: 0 auto;
+    }
 
-            .site-main{
-                display: grid;
-                gap: 30px;
-                padding: 12px 16px;
-                
-            }
+    .teaser-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
 
-            .hero-section{
-                display: grid;
-                max-width: 720px;
-                margin: 0 auto;
-            }
+    .cta {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: var(--shadow);
+      width: fit-content;
+    }
 
-            .teaser-section{
-                display: flex;
-                flex-wrap: wrap;
-                gap: 30px;
-            }
+    .card {
+      flex: 1 1 240px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 12px 16px;
+    }
 
-.cta{
-  display: inline-block;   
-  padding: 10px 16px;
-  border-radius: 999px;
-  background: var(--accent); 
-  color: #fff; 
-  text-decoration: none; 
-  font-weight: 600; 
-  box-shadow: var(--shadow);
-  width: fit-content;      /* verhindert 100% Breite */
-}
+    .card p { margin: 0; color: var(--muted); }
 
+    .card a, .news a {
+      justify-self: start;
+      margin-top: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--accent);
+    }
 
-            .card{
-                flex: 1 1 240px;
-                border: 1px solid (--border);
-                border-radius: var(--radius);
-                box-shadow: 0 1px 2px #666;
-                padding: 12px 16px;
-            }
+    .news-section {
+      display: grid;
+      gap: 30px;
+    }
 
-            .card p{ margin: 0; color: var(--muted); }
+    .site-footer {
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      padding: 14px 0;
+      text-align: center;
+    }
 
-                .card a, .news a{
-                    justify-self: start; 
-                    margin-top: 8px; 
-                    text-decoration: none; 
-                    font-weight: 600;
-                    color: var(--accent);
-                    }
+    /* Burger-Menü */
+    .nav-toggle { display: none; }
 
-            .news-section{
-                display: grid;
-                gap: 30px;
-            }
+    .nav-burger {
+      display: none; /* Desktop aus */
+      font-size: 1.6rem;
+      line-height: 1;
+      padding: 6px 10px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+    }
 
+    @media (max-width: 720px) {
+      .nav-burger { display: inline-block; }
+      .site-nav {
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        gap: 8px;
+        padding-top: 8px;
+      }
+      .nav-toggle:checked + .nav-burger + .site-nav {
+        display: flex;
+      }
+    }
+  </style>
+</head>
 
-            .site-footer{
-                border-top: 1px solid var(--border);
-                color: var(--muted);
-                padding: 14px 0;
-                text-align: center;
-            }
+<body>
+  <div class="page">
 
-                    /* MEDIA QUERY */
-        @media (min-width: 768px) {
-        .site-main { padding: 40px 32px; }
-        }
-        </style>
-    </head>
+    <header class="site-header">
+      <a class="brand" href="index.html">KI für heute</a>
 
-    <body>
-        <div class="page">
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Navigation öffnen/schließen">
+      <label for="nav-toggle" class="nav-burger">☰</label>
 
-            <header class="site-header">
+      <nav class="site-nav" id="primary-nav">
+        <a href="index.html">Homepage</a>
+        <a href="studenten.html">Studenten</a>
+        <a href="developer.html">Developer</a>
+        <a href="vergleich.html">Vergleich</a>
+        <a href="blog-guides.html">Blogs</a>
+      </nav>
+    </header>
 
+    <main class="site-main">
+      <section class="hero-section">
+        <h1>Die besten KI-Tools für Studium & Developer Side Hustles</h1>
+        <p>Studieren & Coden sind heute schneller und produktiver als je zuvor. Mit den richtigen KI-Tools sparst du Zeit, machst bessere Projekte und kannst sogar Nebeneinkommen starten. Finde schnell die richtigen Tools für Hausarbeiten, Präsentationen, Coding-Automationen und kleine Projekte.</p>
+        <a class="cta" href="vergleich.html">Zu den Top-Tools</a>
+      </section>
 
-                <a class="brand"> KI für heute</a>
+      <section class="teaser-section">
+        <article class="card" id="students">
+          <h2>Für Studenten</h2>
+          <p>Schreiben, Referate & Organisation mit KI: von Recherche bis Folien – schneller, strukturierter, stressfreier.</p>
+          <a href="studenten.html">Mehr ansehen</a>
+        </article>
 
-                <nav class="site-nav">
-                    <a href="index.html">Homepage</a>
-                    <a href="studenten.html">Studenten</a>
-                    <a href="developer.html">Developer</a>
-                    <a href="vergleich.html">Vergleich</a>
-                    <a href="blog-guides.html">Blogs</a>
-                        </nav>
+        <article class="card" id="developer">
+          <h2>Für Developer</h2>
+          <p>Code-Assistenten, Automationen & Side-Hustle-Workflows: produktiv werden und Ideen testen.</p>
+          <a href="developer.html">Mehr ansehen</a>
+        </article>
+      </section>
 
-            </header>
+      <section class="news-section">
+        <article class="news">
+          <h2>Top 5 KI-Tools für Hausarbeiten & Referate</h2>
+          <p>Welche Tools helfen wirklich bei Gliederung, Zitieren und Folien – inkl. Praxis-Tipps.</p>
+          <a href="#">Weiterlesen ..</a>
+        </article>
 
-            <main class="site-main">
-                <section class="hero-section">
-                    <h1>Die besten KI‑Tools für Studium & Developer Side Hustles </h1>
-                     <p>Studieren & Coden sind heute schneller und produktiver als je zuvor. Mit den richtigen KI-Tools sparst du Zeit, machst bessere Projekte und kannst sogar Neben­einkommen starten.
-                        Finde schnell die richtigen Tools für Hausarbeiten, Präsentationen, Coding‑Automationen und kleine Projekte. </p>
-                    <a class="cta" href="vergleich.html">Zu den Top‑Tools</a>
-                    
-                </section>
+        <article class="news">
+          <h3>Beste KI-Tools für Coder & kleine Nebenprojekte</h3>
+          <p>Von Code-Gen bis Deploy: so startest du Mini-Projekte mit wenig Zeitbudget.</p>
+          <a href="#">Weiterlesen ..</a>
+        </article>
+      </section>
+    </main>
 
-                <section class="teaser-section">
-
-                    <article class="card" id="students">
-                        <h2>Für Studenten</h2>
-                        <p>Schreiben, Referate & Organisation mit KI: von Recherche bis Folien – schneller, strukturierter, stressfreier.</p>
-                        <a href="studenten.html">Mehr ansehen</a>
-                    </article>
-
-                    <article class="card" id="developer">
-                        <h2>Für Developers </h2>
-                        <p>Code‑Assistenten, Automationen & Side‑Hustle‑Workflows: produktiv werden und Ideen testen.</p>
-                        <a href="developer.html">Mehr ansehen</a>
-                    </article>
-
-                </section>
-
-                <section class="news-section">
-                    <article class="news">
-                        <h2>Top 5 KI‑Tools für Hausarbeiten & Referate </h2>
-                        <p>Welche Tools helfen wirklich bei Gliederung, Zitieren und Folien – inkl. Praxis‑Tipps.</p>
-                        <a href="#">Weiterlesen .. </a>
-                        
-                    </article>
-
-                    <artcile class="news">
-                        <h3>Beste KI‑Tools für Coder & kleine Nebenprojekte</h3>
-                        <p>Von Code‑Gen bis Deploy: so startest du Mini‑Projekte mit wenig Zeitbudget.</p>
-                        <a href>Weiterlesen .. </a>
-                    </artcile>
-
-                    <article class="news">
-
-                    </article>
-                </section>
-            </main>
-
-            <footer class="site-footer">
-                @2025 - Ai with 🫰💙
-            </footer>
-        </div>
-
-    </body>
-
+    <footer class="site-footer">
+      @2025 - Ai with 🫰💙
+    </footer>
+  </div>
+</body>
 </html>
